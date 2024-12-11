@@ -1,0 +1,102 @@
+.navigace {
+    width: 100%;
+    height: 100px;
+    background-color: #121619;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .navigace .vlevo {
+    flex: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 150px;
+  }
+  
+  .navigace .vlevo img {
+    width: 70px;
+  }
+  
+  .navigace .vlevo {
+    flex: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navigace a {
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+  }
+  
+  .navigace .vpravo button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .navigace .vpravo svg {
+    font-size: 40px;
+  }
+  
+  .navigace #open {
+    padding-left: 0px;
+  }
+  .navigace #open img {
+    display: none;
+  }
+  
+  .navigace #close img {
+    display: inherit;
+  }
+  
+  .navigace #open .hiddenLinks {
+    display: inherit;
+    margin-left: 30px;
+  }
+  
+  .navigace #close .hiddenLinks {
+    display: none;
+  }
+  
+  .navigace #open a {
+    width: 70px;
+    margin: 5px;
+  }
+  @media only screen and (max-width: 900px) {
+    .navigace .vpravo a {
+      width: 70px;
+    }
+    .navigace .vlevo {
+      padding-left: 50px;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .navigace .vpravo a {
+      display: none;
+    }
+  
+    .navigace .vpravo {
+      justify-content: flex-end;
+      padding-right: 50px;
+    }
+  
+    .navigace .vpravo button {
+      display: inherit;
+    }
+  }
+  
+  @media only screen and (min-width: 600px) {
+    .navigace .vpravo button {
+      display: none;
+    }
+  
+    .hiddenLinks {
+      display: none;
+    }
+  }

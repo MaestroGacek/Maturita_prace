@@ -10,7 +10,7 @@ function App() {
       <HashRouter basename='/'>
       <Navigace/>
       <Switch>
-        <Route index element={<Home/>}></Route>
+        <Route path="/" exact component={Home}></Route>
       </Switch>
 
       </HashRouter>

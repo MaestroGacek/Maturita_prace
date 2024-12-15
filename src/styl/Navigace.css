@@ -27,7 +27,7 @@
 }
 
 .navigace a {
-  color: white;
+  color: gold;
   text-decoration: none;
   margin: 20px;
 }
@@ -35,7 +35,7 @@
 .navigace .vpravo button {
   background-color: transparent;
   border: none;
-  color: white;
+  color: gold;
   cursor: pointer;
 }
 

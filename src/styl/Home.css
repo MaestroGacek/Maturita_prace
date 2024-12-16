@@ -46,7 +46,8 @@
   }
   
   .homeText button:hover {
-    background-color: #07090a;
+    background-color: gold;
+    color: #121619;
     cursor: pointer;
     transition: 0.3s ease-in;
   }
@@ -66,23 +67,23 @@
       align-items: center;
       flex-direction: column;
       background-color: #121619;
-      color: white;
+      color: gold;
     }
   
     .homeText h1 {
       font-size: 40px;
       height: 30px;
-      color: white;
+      color: gold;
     }
   
     .homeText p {
       font-size: 30px;
-      color: white;
+      color: gold;
     }
   
     .homeText button {
-      background-color: white;
-      color: #121619;
+      background-color: #121619;
+      color: gold;
       margin-bottom: 30px;
     }
   

@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes, HashRouter, Switch } from "react-router-d
 import './styl/App.css'; 
 import Navigace from './componenty/Navigace';
 import Home from './stranky/Home';
+import Jidlo from './componenty/Jidlo';
+import Produkty from './stranky/Produkty';
 
 
 function App() {
@@ -11,8 +13,10 @@ function App() {
       <Navigace/>
       <Switch>
         <Route path="/" exact component={Home}></Route>
+        <Route path="/menu" exact component={Produkty}></Route>
+  
       </Switch>
-
+      <Jidlo/>
       </HashRouter>
       </div>
     

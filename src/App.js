@@ -14,7 +14,6 @@ function App() {
       <Switch>
         <Route path="/" exact component={Home}></Route>
         <Route path="/menu" exact component={Produkty}></Route>
-  
       </Switch>
       <Jidlo/>
       </HashRouter>

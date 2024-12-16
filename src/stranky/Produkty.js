@@ -88,3 +88,10 @@ function Produkty() {
 }
 
 export default Produkty
+/*Když kliknu na "Koupit", zavolá se addToCart.
+Položka se přidá do košíku nebo se zvýší její počet pak se 
+aktualizuje se celková cena.
+U položky se zobrazí ovládací prvky pro přidání/odebrání.
+Košík se zobrazí, jakmile obsahuje alespoň jednu položku.
+Když odeberu všechny položky, zmizí z košíku.
+Když je košík prázdný, celý panel košíku se skryje.*/

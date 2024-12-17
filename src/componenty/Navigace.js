@@ -19,14 +19,14 @@ function Navigace() {
           <Link to={"/"}>Domovská stránka</Link>
           <Link to={"/menu"}>Produkty</Link>
           <Link to={"/about"}>O nás</Link>
-          <Link to={"/contact"}>Kontakty</Link>
+          <Link to={"/kontakty"}>Kontakty</Link>
         </div>
       </div>
       <div className='vpravo'>
         <Link to={"/"}>Domovská stránka</Link>
         <Link to={"/menu"}>Produkty</Link>
         <Link to={"/about"}>O nás</Link>
-        <Link to={"/contact"}>Kontakty</Link>
+        <Link to={"/kontakty"}>Kontakty</Link>
         <button onClick={toggleNavbar}>
           <ReorderIcon />
         </button>

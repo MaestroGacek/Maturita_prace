@@ -1,10 +1,10 @@
 import React from 'react'
 import InstagramIcon from '@mui/icons-material/Instagram';
-import '../styl/Jidlo.css'
+import '../styl/Spodek.css'
 
-function Jidlo() {
+function Spodek() {
   return (
-    <div className='jidlo'>
+    <div className='spodek'>
         <div className='social'>
             <InstagramIcon className="instagram-icon"/>
         </div>
@@ -13,4 +13,4 @@ function Jidlo() {
   )
 }
 
-export default Jidlo
+export default Spodek

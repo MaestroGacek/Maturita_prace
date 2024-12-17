@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+Návod na instalaci Reactu:
+1. Instalace Node.js a npm**:
+   Nejdříve si musíš nainstalovat [Node.js](https://nodejs.org/), který zahrnuje nástroj `npm` (Node Package Manager). To ti umožní instalovat balíčky pro React.
+   - Stáhni a nainstaluj Node.js podle pokynů na stránkách.
+   - Po instalaci ověř, že je Node.js a npm správně nainstalován, pomocí příkazů:
+     
+     node -v
+     npm -v
+    
+   Tyto příkazy by měly vypsat verzi Node.js a npm, což znamená, že jsou správně nainstalovány.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+2. **Spuštění vývojového serveru**:
+   Po vytvoření aplikace a přechodu do adresáře můžeš spustit vývojový server:
 
-## Available Scripts
+   npm start
+   
+   Tento příkaz spustí React aplikaci na lokálním serveru (obvykle na `http://localhost:3000/`). Otevři tuto adresu ve webovém prohlížeči, abys viděl svou aplikaci v chodu.
 
-In the project directory, you can run:
+3. Práce s Reactem:
+   - Otevři adresář projektu v textovém editoru (např. [VS Code](https://code.visualstudio.com/)).
+   - Základní soubory projektu najdeš v adresáři `src`, kde můžeš začít upravovat soubor `src/App.js` pro vytvoření vlastních komponent.
+   
+4. Instalace dalších knihoven:
+   Pokud chceš přidat nějaké další knihovny, například pro práci s routováním nebo správu stavu, můžeš použít `npm` pro jejich instalaci. Například pro instalaci knihovny pro routování React Router:
+   npm install react-router-dom
 
-### `npm start`
+5. Instalace MUI (Material-UI)
+MUI je populární knihovna komponent pro React, která poskytuje spoustu připravených komponent pro rychlé vytvoření moderního uživatelského rozhraní.
+Pro instalaci MUI a jeho závislostí použij následující příkazy v terminálu (být ve složce projektu):
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    Instalace MUI Core:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+npm install @mui/material @emotion/react @emotion/styled
 
-### `npm test`
+Tento příkaz nainstaluje základní komponenty MUI (např. tlačítka, textová pole, a další), stejně jako potřebné styly založené na Emotion (CSS-in-JS knihovna, kterou MUI používá).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Instalace MUI Icons: MUI má také vlastní sadu ikon, které můžeš snadno použít ve své aplikaci. Pro jejich instalaci spusť následující příkaz:
 
-### `npm run build`
+npm install @mui/material @mui/styled-engine-sc styled-components
+npm install @fontsource/roboto
+npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Tento příkaz nainstaluje sadu ikon Material Design pro použití v React komponentách.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   

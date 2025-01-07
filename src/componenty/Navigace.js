@@ -9,7 +9,7 @@ function Navigace() {
   const [otevriLink, setOtevritLink] = useState(false);
 
   const toggleNavbar = () => {
-    setOtevritLink(!openLinks);
+    setOtevritLink(!otevriLink);
     }
   return (
     <div className='navigace'>
@@ -19,6 +19,8 @@ function Navigace() {
           <Link to={"/"}>Domovská stránka</Link>
           <Link to={"/menu"}>Produkty</Link>
           <Link to={"/about"}>O nás</Link>
+          <Link to={"/registrace"}>Registrace</Link>
+          <Link to={"/login"}>Login</Link>
           <Link to={"/kontakty"}>Kontakty</Link>
         </div>
       </div>
@@ -26,7 +28,10 @@ function Navigace() {
         <Link to={"/"}>Domovská stránka</Link>
         <Link to={"/menu"}>Produkty</Link>
         <Link to={"/about"}>O nás</Link>
+        <Link to={"/registrace"}>Registrace</Link>
+        <Link to={"/login"}>Login</Link>
         <Link to={"/kontakty"}>Kontakty</Link>
+        
         <button onClick={toggleNavbar}>
           <ReorderIcon />
         </button>

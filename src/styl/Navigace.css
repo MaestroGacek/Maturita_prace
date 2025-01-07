@@ -1,9 +1,12 @@
 .navigace {
   width: 100%;
   height: 100px;
+
   background-color: #121619;
   display: flex;
   flex-direction: row;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
 }
 
 .navigace .vlevo {

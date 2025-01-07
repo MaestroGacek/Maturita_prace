@@ -56,6 +56,7 @@ function Produkty() {
                                     <RemoveIcon onClick={() => removeFromCart(ProduktyList.find(item => item.name === name))} />
                                     <span>{details.count}</span>
                                     <AddIcon onClick={() => addToCart(ProduktyList.find(item => item.name === name))} />
+                                    <button onClick={() => history.push('/objednat')}>Objednat</button>
                                 </div>
                             </div>
                         ))}

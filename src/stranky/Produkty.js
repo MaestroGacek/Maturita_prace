@@ -38,6 +38,12 @@ function Produkty() {
         return Object.values(cart).reduce((total, item) => total + item.count, 0);
     };
 
+    const Objednat = () => {
+        console.log('Order placed:', cart);
+        console.log('Total Price:', totalPrice);
+        alert('Order has been placed!'); 
+    };
+
     return (
         <div className='produkty'>
             {getTotalItems() > 0 && (
@@ -56,11 +62,11 @@ function Produkty() {
                                     <RemoveIcon onClick={() => removeFromCart(ProduktyList.find(item => item.name === name))} />
                                     <span>{details.count}</span>
                                     <AddIcon onClick={() => addToCart(ProduktyList.find(item => item.name === name))} />
-                                    <button onClick={() => history.push('/objednat')}>Objednat</button>
                                 </div>
                             </div>
                         ))}
                     </div>
+                    <button onClick={Objednat}>Objednat</button>
                 </div>
             )}
             <h1 className='produktyTitle'>Naše produkty</h1>

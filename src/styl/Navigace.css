@@ -44,6 +44,8 @@
 
 .navigace .vpravo  svg {
   font-size: 40px;
+  margin-left: 90%;
+  margin-top: 15%;
 }
 
 .navigace #open {

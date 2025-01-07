@@ -6,7 +6,9 @@ function Spodek() {
   return (
     <div className='spodek'>
         <div className='social'>
-            <InstagramIcon className="instagram-icon"/>
+            <a href="https://www.instagram.com/libisske_vanocky/" target="_blank" rel="noopener noreferrer">
+                <InstagramIcon className="instagram-icon"/>
+            </a>
         </div>
         <p>Copyright &copy; 2024 www.libisske-vanocky.com</p>
     </div>

@@ -4,6 +4,8 @@ import '../styl/Produkty.css'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { Link } from 'react-router-dom';
+
 
 function Produkty() {
     const [cart, setCart] = useState({});
@@ -41,7 +43,7 @@ function Produkty() {
     const Objednat = () => {
         console.log('Order placed:', cart);
         console.log('Total Price:', totalPrice);
-        alert('Order has been placed!'); 
+        
     };
 
     return (
@@ -65,8 +67,18 @@ function Produkty() {
                                 </div>
                             </div>
                         ))}
-                    </div>
-                    <button onClick={Objednat}>Objednat</button>
+                       
+                            <div className='produkty'>
+                                {getTotalItems() > 0 && (
+                                    <div>
+                                        <Link to={'/objednavka'}>
+                                            <button>Objednat</button>
+                                        </Link>
+                                    </div>
+                                )}
+                                
+                            </div>
+                        </div>
                 </div>
             )}
             <h1 className='produktyTitle'>Naše produkty</h1>

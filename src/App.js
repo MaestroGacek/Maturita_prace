@@ -8,6 +8,7 @@ import Kontakty from './stranky/Kontakty';
 import O_nas from './stranky/O_nas';
 import Login from './stranky/Login';
 import Registrace from './stranky/FormRegistrace';
+import ObjednavkaForm from './stranky/ObjednavkaForm';
 function App() {
   return (
     <div className='App'>
@@ -20,6 +21,7 @@ function App() {
         <Route path="/registrace" exact component={Registrace}></Route>
         <Route path="/login" exact component={Login}></Route>
         <Route path="/kontakty" exact component={Kontakty}></Route>
+        <Route path="/objednavka" exact component={ObjednavkaForm}></Route>
   
       </Switch>
       <Spodek/>

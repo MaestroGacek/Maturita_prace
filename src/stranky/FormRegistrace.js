@@ -16,7 +16,7 @@ const FormRegistrace = () => {
         if (error) {
             setError(error.message);
         } else {
-            console.log('User registered:', user);
+            window.alert('User registrován:', user);
            
         }
     };

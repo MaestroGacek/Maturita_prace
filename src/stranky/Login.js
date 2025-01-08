@@ -1,4 +1,4 @@
-import { supabase } from './SupabaseClient'; 
+import { supabase } from './SupabaseClient'; // Ensure this matches the filename exactly
 import React, { useState } from 'react';
 
 const Login = () => {
@@ -9,21 +9,21 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const { user, error } = await supabase.auth.signIn({
-            email,
-            password,
+            email: email,
+            password: password,
         });
         if (error) {
             setError(error.message);
         } else {
             console.log('User logged in:', user);
-           
+            // Redirect or perform any other action after successful login
         }
     };
 
     return (
         <form onSubmit={handleSubmit}>
             <h1>Login</h1>
-            <h2>Email</h2>
+            <h2>Email:</h2>
             <input
                 type="email"
                 value={email}
@@ -31,7 +31,7 @@ const Login = () => {
                 placeholder="Email"
                 required
             />
-            <h2>Heslo</h2>
+            <h2>Heslo:</h2>
             <input
                 type="password"
                 value={password}
@@ -40,7 +40,7 @@ const Login = () => {
                 required
             />
             <button type="submit">Login</button>
-            {error && <p>{error}</p>}
+            {error && <p style={{ color: 'red' }}>{error}</p>}
         </form>
     );
 };

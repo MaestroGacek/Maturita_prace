@@ -1,4 +1,3 @@
-
 import Pozadi from "../obrazky/Pozadi.jpeg";
 import "../styl/O_nas.css";
 function O_nas() {

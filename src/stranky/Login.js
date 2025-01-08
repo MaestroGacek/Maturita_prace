@@ -1,44 +1,46 @@
+import { supabase } from '../SupabaseClient'; 
 import React, { useState } from 'react';
-import '../styl/Login.css';
 
 const Login = () => {
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState(null);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-    
-        console.log('Username:', username);
-        console.log('Password:', password);
+        const { user, error } = await supabase.auth.signIn({
+            email,
+            password,
+        });
+        if (error) {
+            setError(error.message);
+        } else {
+            console.log('User logged in:', user);
+           
+        }
     };
 
     return (
-        <div className="login-container">
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="username">Uživatelské jméno:</label>
-                    <input
-                        type="text"
-                        id="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                    />
-                </div>
-                <div>
-                    <label htmlFor="password">Heslo:</label>
-                    <input
-                        type="password"
-                        id="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </div>
-                <button type="submit">Login</button>
-            </form>
-        </div>
+        <form onSubmit={handleSubmit}>
+            <h2>Email</h2>
+            <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+                required
+            />
+            <h2>Password</h2>
+            <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+                required
+            />
+            <button type="submit">Login</button>
+            {error && <p>{error}</p>}
+        </form>
     );
 };
 

@@ -1,4 +1,4 @@
-import { supabase } from '../SupabaseClient'; 
+import { supabase } from './SupabaseClient'; 
 import React, { useState } from 'react';
 
 const Login = () => {
@@ -22,6 +22,7 @@ const Login = () => {
 
     return (
         <form onSubmit={handleSubmit}>
+            <h1>Login</h1>
             <h2>Email</h2>
             <input
                 type="email"
@@ -30,7 +31,7 @@ const Login = () => {
                 placeholder="Email"
                 required
             />
-            <h2>Password</h2>
+            <h2>Heslo</h2>
             <input
                 type="password"
                 value={password}

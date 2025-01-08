@@ -1,4 +1,4 @@
-import { supabase } from '../SupabaseClient'; 
+import { supabase } from './SupabaseClient'; 
 import React, { useState } from 'react';
 import '../styl/FormRegistrace.css';
 
@@ -23,6 +23,7 @@ const FormRegistrace = () => {
 
     return (
         <form onSubmit={handleSubmit}>
+            <h1>Registrace</h1>
             <h2>Email</h2>
             <input
                 type="email"
@@ -31,7 +32,7 @@ const FormRegistrace = () => {
                 placeholder="Email"
                 required
             />
-            <h2>Password</h2>
+            <h2>Heslo</h2>
             <input
                 type="password"
                 value={password}
@@ -39,7 +40,7 @@ const FormRegistrace = () => {
                 placeholder="Password"
                 required
             />
-            <button type="submit">Register</button>
+            <button type="submit">Registrovat se</button>
             {error && <p>{error}</p>}
         </form>
     );

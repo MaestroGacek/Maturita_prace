@@ -10,7 +10,7 @@ function Spodek() {
                 <InstagramIcon className="instagram-icon"/>
             </a>
         </div>
-        <p>Copyright &copy; 2024 www.libisske-vanocky.com</p>
+        <p>Copyright &copy; 2025 www.libisske-vanocky.com</p>
     </div>
   )
 }

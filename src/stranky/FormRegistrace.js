@@ -1,4 +1,4 @@
-import { supabase } from './SupabaseClient'; 
+import { supabase } from '../SupabaseClient'; 
 import React, { useState } from 'react';
 import '../styl/FormRegistrace.css';
 

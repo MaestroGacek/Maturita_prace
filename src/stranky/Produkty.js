@@ -8,6 +8,27 @@ import { Link } from 'react-router-dom';
 
 
 function Produkty() {
+    const Produkty = ({ cartItems }) => {
+        const [total, setTotal] = useState(0);
+    
+        useEffect(() => {
+            const calculateTotal = () => {
+                const totalAmount = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+                setTotal(totalAmount);
+            };
+    
+            calculateTotal();
+        }, [cartItems]);
+    
+        return (
+            <div>
+               
+                <ObjednavkaForm total={total} />
+            </div>
+        );
+    };
+       
+    
     const [cart, setCart] = useState({});
     const [totalPrice, setTotalPrice] = useState(0);
 
@@ -71,7 +92,10 @@ function Produkty() {
                             <div className='produkty'>
                                 {getTotalItems() > 0 && (
                                     <div>
-                                        <Link to={'/objednavka'}>
+                                        <Link to={{
+                                            pathname: '/objednavka',
+                                            state: { price: totalPrice }
+                                        }}>
                                             <button>Objednat</button>
                                         </Link>
                                     </div>

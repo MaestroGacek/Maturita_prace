@@ -20,8 +20,8 @@ function ObjednavkaForm({ location }) {
             return;
         }
 
-        // Initialize EmailJS with your public key
-        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key
+       
+        emailjs.init("KQssTKecLzDR9Jjn0");
 
         const templateParams = {
             to_email: email,
@@ -29,24 +29,35 @@ function ObjednavkaForm({ location }) {
             address: address,
             contact: contact,
             total_price: totalPrice,
+            from_name: "E-shop",
+            message: `Nová objednávka:
+Jméno: ${name}
+Email: ${email}
+Adresa: ${address}
+Telefon: ${contact}
+Celková cena: ${totalPrice} Kč`
         };
 
         emailjs.send(
-            'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-            'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-            templateParams
-        ).then((response) => {
-            console.log('SUCCESS!', response.status, response.text);
-            setSuccess('Objednávka byla úspěšně odeslána! Zkontrolujte svůj email.');
-            setName('');
-            setAddress('');
-            setContact('');
-            setEmail('');
-            setError('');
-        }, (err) => {
-            console.log('FAILED...', err);
-            setError('Došlo k chybě při odesílání objednávky. Zkuste to prosím znovu.');
-        });
+            'service_93lkn7d', 
+            'template_hnd94ld',
+            templateParams,
+            'KQssTKecLzDR9Jjn0'
+        ).then(
+            (response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                setSuccess('Objednávka byla úspěšně odeslána! Zkontrolujte svůj email.');
+                setName('');
+                setAddress('');
+                setContact('');
+                setEmail('');
+                setError('');
+            },
+            (error) => {
+                console.error('FAILED...', error);
+                setError(`Došlo k chybě při odesílání objednávky: ${error.text}`);
+            }
+        );
     };
 
     return (

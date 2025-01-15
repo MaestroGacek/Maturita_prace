@@ -1,3 +1,4 @@
+import { supabase } from '../SupabaseClient'; 
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
@@ -13,51 +14,73 @@ function ObjednavkaForm({ location }) {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!name || !address || !contact || !email) {
             setError('All fields are required.');
             return;
         }
 
-       
-        emailjs.init("KQssTKecLzDR9Jjn0");
+        try {
+            // Save order to Supabase
+            const { data, error: supabaseError } = await supabase
+                .from('orders')
+                .insert([
+                    {
+                        name: name,
+                        email: email,
+                        address: address,
+                        contact: contact,
+                        total_price: totalPrice,
+                        created_at: new Date().toISOString()
+                    }
+                ]);
 
-        const templateParams = {
-            to_email: email,
-            to_name: name,
-            address: address,
-            contact: contact,
-            total_price: totalPrice,
-            from_name: "E-shop",
-            message: `Nová objednávka:
+            if (supabaseError) {
+                throw supabaseError;
+            }
+
+            emailjs.init("KQssTKecLzDR9Jjn0");
+
+            const templateParams = {
+                to_email: email,
+                to_name: name,
+                address: address,
+                contact: contact,
+                total_price: totalPrice,
+                from_name: "E-shop",
+                message: `Nová objednávka:
 Jméno: ${name}
 Email: ${email}
 Adresa: ${address}
 Telefon: ${contact}
 Celková cena: ${totalPrice} Kč`
-        };
+            };
 
-        emailjs.send(
-            'service_rv3gsvd', 
-            'template_hnd94ld',
-            templateParams,
-            'KQssTKecLzDR9Jjn0'
-        ).then(
-            (response) => {
-                console.log('SUCCESS!', response.status, response.text);
-                setSuccess('Objednávka byla úspěšně odeslána! Zkontrolujte svůj email.');
-                setName('');
-                setAddress('');
-                setContact('');
-                setEmail('');
-                setError('');
-            },
-            (error) => {
-                console.error('FAILED...', error);
-                setError(`Došlo k chybě při odesílání objednávky: ${error.text}`);
-            }
-        );
+            emailjs.send(
+                'service_rv3gsvd', 
+                'template_hnd94ld',
+                templateParams,
+                'KQssTKecLzDR9Jjn0'
+            ).then(
+                (response) => {
+                    console.log('SUCCESS!', response.status, response.text);
+                    setSuccess('Objednávka byla úspěšně odeslána! Zkontrolujte svůj email.');
+                    setName('');
+                    setAddress('');
+                    setContact('');
+                    setEmail('');
+                    setError('');
+                },
+                (error) => {
+                    console.error('FAILED...', error);
+                    setError(`Došlo k chybě při odesílání objednávky: ${error.text}`);
+                }
+            );
+        } catch (error) {
+            console.error('FAILED...', error);
+            setError(`Došlo k chybě při ukládání objednávky: ${error.message}`);
+        }
     };
 
     return (

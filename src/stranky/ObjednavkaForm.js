@@ -39,7 +39,7 @@ Celková cena: ${totalPrice} Kč`
         };
 
         emailjs.send(
-            'service_93lkn7d', 
+            'service_rv3gsvd', 
             'template_hnd94ld',
             templateParams,
             'KQssTKecLzDR9Jjn0'
@@ -67,11 +67,11 @@ Celková cena: ${totalPrice} Kč`
             {success && <p style={{ color: 'green' }}>{success}</p>}
             <div>
                 <label>Jméno:</label>
-                <input type='text' value={name} onChange={(e) => setName(e.target.value)} required />
+                <input type='text' id='text' value={name} onChange={(e) => setName(e.target.value)} required />
             </div>
             <div>
                 <label>Email:</label>
-                <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
+                <input type='email' id='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
             </div>
             <div>
                 <label>Adresa:</label>
@@ -82,7 +82,7 @@ Celková cena: ${totalPrice} Kč`
                 <input type='text' value={contact} onChange={(e) => setContact(e.target.value)} required />
             </div>
             <div>
-                <h3>Celkova cena: {totalPrice} Kč</h3>
+                <h3 id='message' >Celkova cena: {totalPrice} Kč</h3>
             </div>
             <button type='submit'>Objednat</button>
         </form>

@@ -1,6 +1,7 @@
 import { supabase } from '../SupabaseClient';
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import '../styl/Login.css';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -54,7 +55,7 @@ const Login = () => {
 
     if (user) {
         return (
-            <div>
+            <div className="login">
                 <h2>Přihlášen jako: {user.email}</h2>
                 <button onClick={handleLogout}>Odhlásit se</button>
             </div>
@@ -62,28 +63,32 @@ const Login = () => {
     }
 
     return (
-        <div className="login-container">
-            <form onSubmit={handleSubmit}>
-                <h1>Login</h1>
-                <h2>Email</h2>
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-                <h2>Heslo</h2>
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <button type="submit">Login</button>
-                {error && <p style={{ color: 'red' }}>{error}</p>}
-            </form>
+        <div className="login">
+            <div className="login-container">
+                <h2>Login</h2>
+                <form onSubmit={handleSubmit}>
+                    <h2>Email</h2>
+                    <input
+                        id  = "email"
+                        type="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
+                    <h2>Heslo</h2>
+                    <input
+                        id  = "password"
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                    <button type="submit">Přihlásit se</button>
+                    {error && <p style={{ color: 'red' }}>{error}</p>}
+                </form>
+            </div>
         </div>
     );
 };

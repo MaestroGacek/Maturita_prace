@@ -17,32 +17,35 @@ const FormRegistrace = () => {
             setError(error.message);
         } else {
             window.alert('User registrován:', user);
-           
         }
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h1>Registrace</h1>
-            <h2>Email</h2>
-            <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
-                required
-            />
-            <h2>Heslo</h2>
-            <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-                required
-            />
-            <button type="submit">Registrovat se</button>
-            {error && <p>{error}</p>}
-        </form>
+        <div className="registrace">
+            <div className="registrace-container">
+                <h2>Registrace</h2>
+                <form onSubmit={handleSubmit}>
+                    <h2>Email</h2>
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Email"
+                        required
+                    />
+                    <h2>Heslo</h2>
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Password"
+                        required
+                    />
+                    <button type="submit">Registrovat se</button>
+                    {error && <p>{error}</p>}
+                </form>
+            </div>
+        </div>
     );
 };
 

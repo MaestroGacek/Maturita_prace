@@ -1,4 +1,4 @@
-.login {
+.objednavka {
     width: 100%;
     min-height: 90vh;
     display: flex;
@@ -9,8 +9,8 @@
     color: #333;
 }
 
-.login-container {
-    max-width: 400px;
+.objednavka-container {
+    max-width: 500px;
     width: 100%;
     padding: 30px;
     background-color: white;
@@ -18,11 +18,20 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.login-container h1 {
+.objednavka-container h1,
+.objednavka-container h2 {
     color: #333;
+    margin-bottom: 15px;
+}
+
+.objednavka-container h1 {
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 20px;
+}
+
+.objednavka-container h2 {
+    font-size: 1.2rem;
+    margin-top: 15px;
 }
 
 .form-group {
@@ -36,7 +45,8 @@
     color: #333;
 }
 
-.form-group input {
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -45,7 +55,12 @@
     color: #333;
 }
 
-.login-container button {
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.objednavka-container button {
     width: 100%;
     padding: 12px;
     background-color: #121619;
@@ -55,10 +70,10 @@
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-.login-container button:hover {
+.objednavka-container button:hover {
     background-color: gold;
     color: #121619;
 }
@@ -69,16 +84,26 @@
     margin-top: 10px;
 }
 
+.success-message {
+    color: green;
+    text-align: center;
+    margin-top: 10px;
+}
+
 @media screen and (max-width: 480px) {
-    .login {
+    .objednavka {
         padding: 10px;
     }
     
-    .login-container {
+    .objednavka-container {
         padding: 20px;
     }
 
-    .login-container h1 {
+    .objednavka-container h1 {
         font-size: 1.75rem;
+    }
+
+    .objednavka-container h2 {
+        font-size: 1.1rem;
     }
 }

@@ -1,94 +1,84 @@
 .home {
-    width: 100%;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  }
-  
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.homeText {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: gold;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.homeText h1 {
+  font-size: clamp(2rem, 5vw, 4.375rem);
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.homeText p {
+  font-size: clamp(1.25rem, 3vw, 2.5rem);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.homeText button {
+  background-color: #121619;
+  color: gold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.8rem 1.5rem;
+  min-width: 180px;
+  text-decoration: none;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  transition: all 0.3s ease;
+}
+
+.homeText button:hover {
+  background-color: gold;
+  color: #121619;
+  transform: translateY(-2px);
+}
+
+/* Tablet */
+@media only screen and (max-width: 768px) {
   .homeText {
-    width: 100%;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: gold;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1.5rem;
   }
-  
-  .homeText h1 {
-    font-size: 70px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .homeText p {
-    font-size: 40px;
-    margin-bottom: 30px;
-  }
-  
+
   .homeText button {
-    background-color: #121619;
-    color: gold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    height: 50px;
-    width: 180px;
-    text-decoration: none;
-    font-size: 20px;
+    min-width: 160px;
+    padding: 0.7rem 1.2rem;
   }
-  
-  .homeText button:hover {
-    background-color: gold;
-    color: #121619;
-    cursor: pointer;
-    transition: 0.3s ease-in;
+}
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+  .homeText {
+    padding: 1rem;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
   }
-  
-  @media only screen and (max-width: 650px) {
-    .home {
-      justify-content: center;
-      align-items: center;
-    }
-    .homeText {
-      margin-left: 0px;
-      border-radius: 10px;
-      padding: 10px;
-      width: 80%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      background-color: #121619;
-      color: gold;
-    }
-  
-    .homeText h1 {
-      font-size: 40px;
-      height: 30px;
-      color: gold;
-    }
-  
-    .homeText p {
-      font-size: 30px;
-      color: gold;
-    }
-  
-    .homeText button {
-      background-color: #121619;
-      color: gold;
-      margin-bottom: 30px;
-    }
-  
-    .homeText button:hover {
-      background-color: gold;
-      color: #121619;
-    }
+
+  .homeText button {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 1.5rem;
   }
+}

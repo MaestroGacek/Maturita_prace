@@ -1,6 +1,7 @@
 import { supabase } from '../SupabaseClient'; 
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import '../styl/ObjednavkaForm.css';
 
 function ObjednavkaForm({ location }) {
     const { state } = location || {};
@@ -84,31 +85,50 @@ Celková cena: ${totalPrice} Kč`
     };
 
     return (
-        <form ref={form} onSubmit={handleSubmit}>
-            <h2>Objednávka</h2>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            {success && <p style={{ color: 'green' }}>{success}</p>}
-            <div>
-                <label>Jméno:</label>
-                <input type='text' id='text' value={name} onChange={(e) => setName(e.target.value)} required />
+        <div className="objednavka">
+            <div className="objednavka-container">
+                <h2>Objednávka</h2>
+                <form ref={form} onSubmit={handleSubmit}>
+                    <h2>Jméno</h2>
+                    <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Vaše jméno"
+                        required
+                    />
+                    <h2>Email</h2>
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Váš email"
+                        required
+                    />
+                    <h2>Adresa</h2>
+                    <input
+                        type="text"
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                        placeholder="Vaše adresa"
+                        required
+                    />
+                    <h2>Telefon</h2>
+                    <input
+                        type="text"
+                        value={contact}
+                        onChange={(e) => setContact(e.target.value)}
+                        placeholder="Váš telefon"
+                        required
+                    />
+                    <h2>Celková cena</h2>
+                    <p>{totalPrice} Kč</p>
+                    <button type="submit">Objednat</button>
+                    {error && <p className="error-message">{error}</p>}
+                    {success && <p className="success-message">{success}</p>}
+                </form>
             </div>
-            <div>
-                <label>Email:</label>
-                <input type='email' id='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
-            </div>
-            <div>
-                <label>Adresa:</label>
-                <input type='text' value={address} onChange={(e) => setAddress(e.target.value)} required />
-            </div>
-            <div>
-                <label>Telefon:</label>
-                <input type='text' value={contact} onChange={(e) => setContact(e.target.value)} required />
-            </div>
-            <div>
-                <h3 id='message' >Celkova cena: {totalPrice} Kč</h3>
-            </div>
-            <button type='submit'>Objednat</button>
-        </form>
+        </div>
     );
 };
 

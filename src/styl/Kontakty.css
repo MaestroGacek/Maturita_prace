@@ -1,31 +1,77 @@
 .kontakty {
-    width: 100%;
-    height: 90vh;
-    display: flex;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  background-color: white;
+}
 
-  }
-  
-  .kontakty .vlevo {
-    height: 100%;
-    flex: 50%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-  .kontakty .vpravo {
-    height: 100%;
-    flex: 50%;
-    display: flex;
+.kontakty .vlevo {
+  flex: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.kontakty .vpravo {
+  flex: 1;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+
+.kontakty .vpravo h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.kontakty .vpravo p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  .kontakty {
     flex-direction: column;
-    justify-content: center;
   }
-  
+
+  .kontakty .vlevo {
+    height: 200px;
+  }
+
+  .kontakty .vpravo {
+    padding: 2rem;
+  }
+
   .kontakty .vpravo h1 {
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-    font-weight: 10;
-    font-size: 50px;
-    margin-left: 30px;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
   }
+
+  .kontakty .vpravo p {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .kontakty .vlevo {
+    height: 150px;
+  }
+
+  .kontakty .vpravo {
+    padding: 1.5rem;
+  }
+
+  .kontakty .vpravo h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .kontakty .vpravo p {
+    font-size: 1rem;
+  }
+}

@@ -11,11 +11,11 @@ const Login = () => {
     const history = useHistory();
 
     useEffect(() => {
-        // Check for existing session
+       
         const session = supabase.auth.getSession();
         setUser(session?.user || null);
 
-        // Listen for auth changes
+       
         const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
             setUser(session?.user || null);
         });
@@ -35,7 +35,7 @@ const Login = () => {
 
             if (data.user) {
                 setUser(data.user);
-                history.push('/'); // Redirect to home page after login
+                history.push('/'); 
             }
         } catch (error) {
             setError(error.message);

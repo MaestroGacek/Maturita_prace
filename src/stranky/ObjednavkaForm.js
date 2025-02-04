@@ -23,7 +23,7 @@ function ObjednavkaForm({ location }) {
         }
 
         try {
-            // Save order to Supabase
+            
             const { data, error: supabaseError } = await supabase
                 .from('orders')
                 .insert([

@@ -37,7 +37,8 @@ function Navigace() {
             </>
           )}
         </div>
-        <img src={Logo} alt="Logo" />
+        <Link to={"/"}>
+        <img src={Logo} alt="Logo" /></Link>
         <div className='hiddenLinks'>
           <Link to={"/"}>Domovská stránka</Link>
           <Link to={"/menu"}>Produkty</Link>

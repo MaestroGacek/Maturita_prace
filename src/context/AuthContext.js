@@ -8,12 +8,12 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Check active sessions and sets the user
+        
         const session = supabase.auth.getSession();
         setUser(session?.user || null);
         setLoading(false);
 
-        // Listen for changes on auth state (login, sign out, etc.)
+       
         const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
             setUser(session?.user || null);
             setLoading(false);
@@ -29,7 +29,6 @@ export const AuthProvider = ({ children }) => {
     );
 };
 
-// Hook to use the auth context
 export const useAuth = () => {
     const context = useContext(AuthContext);
     if (context === undefined) {
